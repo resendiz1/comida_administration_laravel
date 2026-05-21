@@ -24,7 +24,7 @@
         <tbody>
           @foreach ($products as $product)
             <tr>
-              <td class="td-img" data-label="Imagen">
+              <td class="td-img">
                 <div class="admin-img-stack">
                   @php
                     $mainImg = $product->image
@@ -40,15 +40,15 @@
                   @endif
                 </div>
               </td>
-              <td class="td-name" data-label="Nombre"><strong>{{ $product->name }}</strong></td>
-              <td data-label="Categoría"><span class="admin-badge" style="background:#fce4d6;color:#e85d3a;">{{ ucfirst($product->category) }}</span></td>
-              <td class="td-price" data-label="Precio"><strong>${{ number_format($product->price, 2) }}</strong></td>
-              <td data-label="Visible">
+              <td class="td-name"><strong>{{ $product->name }}</strong></td>
+              <td><span class="admin-badge" style="background:#fce4d6;color:#e85d3a;">{{ ucfirst($product->category) }}</span></td>
+              <td class="td-price"><strong>${{ number_format($product->price, 2) }}</strong></td>
+              <td>
                 <span class="admin-badge {{ $product->visible ? 'admin-badge-yes' : 'admin-badge-no' }}">
                   {{ $product->visible ? 'Sí' : 'No' }}
                 </span>
               </td>
-              <td data-label="Acciones">
+              <td>
                 <div class="td-actions">
                   <a href="{{ route('admin.products.edit', $product) }}" class="admin-btn" style="padding:6px 14px;font-size:.8rem;">
                     <i class="fas fa-edit"></i> Editar
